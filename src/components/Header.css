@@ -1,0 +1,141 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  position: relative;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 96px 24px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 72px 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===============================
+   DARK MODE (LIGHT INDUSTRIAL GREY)
+   =============================== */
+
+html.dark {
+  --bg: #0f172a;          /* slate-900 */
+  --fg: #e5e7eb;          /* gray-200 */
+
+  --primary: #e5e7eb;
+  --primary-fg: #0f172a;
+
+  --accent: #60a5fa;      /* softer blue */
+  --muted: #9ca3af;       /* gray-400 */
+
+  --border: rgba(255, 255, 255, 0.18);
+}
+
+.secondary-btn {
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  font-weight: 600;
+  background: transparent;
+  color: var(--fg);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Dark mode fix */
+html.dark .secondary-btn {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Hover states */
+.secondary-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html.dark .secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
