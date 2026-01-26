@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [dark, setDark] = useState(false);
@@ -24,19 +25,21 @@ export default function Header() {
       <div className="header-inner">
         {/* LEFT: LOGO */}
         <div className="logo">
-          <img
-            src="/src/assets/logo-transparent.png"
-            alt="SourceXpert Logo"
-          />
+          <Link to="/">
+            <img
+              src="/src/assets/logo-transparent.png"
+              alt="SourceXpert Logo"
+            />
+          </Link>
         </div>
 
         {/* RIGHT: NAV + THEME TOGGLE */}
         <div className="header-right">
           <nav className="nav">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </nav>
 
           <button
