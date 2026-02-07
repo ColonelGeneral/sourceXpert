@@ -13,14 +13,13 @@ import tableWareImg from "../assets/products/tableware.jpg";
 import decorativeitemsimg from "../assets/products/decorative-items.jpg";
 import kidsdecorimg from "../assets/products/kids-decor.jpg";
 import christmasDecorationsImg from "../assets/products/christmas-decorations.jpg";
+import hero1 from "../assets/hero/hero1.jpg";
+import hero2 from "../assets/hero/hero2.jpeg";
+import hero3 from "../assets/hero/hero3.jpg";
+import hero4 from "../assets/hero/hero4.jpg";
 
-/* HERO SLIDER IMAGES */
-const heroImages = [
-  "/src/assets/hero/hero1.jpg",
-  "/src/assets/hero/hero2.jpeg",
-  "/src/assets/hero/hero3.jpg",
-  "/src/assets/hero/hero4.jpg",
-];
+
+const heroImages = [ hero1, hero2, hero3, hero4];
 
 const productItems = [
   { id: 1, title: "Table & Kitchen", image: tableKitchenImg },

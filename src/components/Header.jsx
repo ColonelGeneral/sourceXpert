@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import logo from "../assets/logo-transparent.png";
 
 export default function Header() {
   const [dark, setDark] = useState(false);
@@ -43,10 +44,7 @@ export default function Header() {
         {/* LEFT: LOGO */}
         <div className="logo">
           <Link to="/">
-            <img
-              src="/src/assets/logo-transparent.png"
-              alt="SourceXpert Logo"
-            />
+            <img src={logo} alt="SourceXpert Logo" />
           </Link>
         </div>
 
