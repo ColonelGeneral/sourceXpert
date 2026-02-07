@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [dark, setDark] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Load saved theme on mount
   useEffect(() => {
@@ -18,6 +20,21 @@ export default function Header() {
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  const goToAbout = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("about")?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 100);
+    } else {
+      document.getElementById("about")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -38,8 +55,9 @@ export default function Header() {
           <nav className="nav">
             <Link to="/">Home</Link>
             <Link to="/products">Products</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <button className="nav-link" onClick={goToAbout}>
+              About
+            </button>
           </nav>
 
           <button
